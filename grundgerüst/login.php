@@ -38,16 +38,14 @@ foreach($dataArray as $value){
 echo "<p>Jetzt de Datenbank: </p>";
 
 $server = 'localhost';
-$username = 'pma';
-$password = 'raspberry';
+$username = 'tobiasollmaier';
+$password = 'W1ll0fth3W1sps';
 $database = 'html_db';
 
 try{
-    $connection = new PDO("mysql:host=$server;dbname=$database",$username,
-    $password);
+    $connection = new PDO('mysql:host=myjesussqlserver.mysql.database.azure.com;dbname=html_db', $username, $password);
     // EXCEPTION konfigurieren
-    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+    
     $stmtuser = $connection->prepare ("SELECT * FROM user WHERE user.email = :email and user.passwort = :passwort");
     $stmtuser->bindParam(':email', $_POST["email"]);
     $stmtuser->bindParam(':passwort', $hashedPasswort);
