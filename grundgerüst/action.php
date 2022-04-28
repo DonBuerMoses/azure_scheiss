@@ -40,16 +40,13 @@ $database = 'html_db';
 
 try{
     
-    //$connection = new PDO('mysql:host=myjesussqlserver.mysql.database.azure.com;port=3306;dbname=html_db', 'tobiasollmaier', $password);
-    $connection = mysqli_init();
-    echo ('Init');
-    mysqli_ssl_set($connection,NULL,NULL, "https://webapptobias.azurewebsites.net/DigiCertGlobalRootCA.crt.pem", NULL, NULL); 
-    echo ('SSL_Set');
-    mysqli_real_connect($connection, "myjesussqlserver.mysql.database.azure.com", "tobiasollmaier", "W1ll0fth3W1sps", "html_db", 3306, MYSQLI_CLIENT_SSL);
-    echo ('connect');
-    if (mysqli_connect_errno($connection)) {
-        die('Failed to connect to MySQL: '.mysqli_connect_error());
-    }
+    $connection = new PDO('mysql:host=myjesussqlserver.mysql.database.azure.com;port=3306;dbname=html_db', 'tobiasollmaier', $password);
+    //$connection = mysqli_init();
+    //echo ('Init')
+    //mysqli_ssl_set($connection,NULL,NULL, "https://webapptobias.azurewebsites.net/DigiCertGlobalRootCA.crt.pem", NULL, NULL); 
+    //echo ('SSL_Set')
+    //mysqli_real_connect($connection, "myjesussqlserver.mysql.database.azure.com", "tobiasollmaier", "W1ll0fth3W1sps", "html_db", 3306, MYSQLI_CLIENT_SSL);
+    echo ('connect')
     // EXCEPTION konfigurieren
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -81,7 +78,7 @@ try{
     echo ('<p>Eintrag User erfolgreich</p>');
 
     }
-    catch(mysql.connector.Error $e)
+    catch(PDOException $e)
      {
      echo ( 'Fehler: ' . $e->getMessage());
      }
