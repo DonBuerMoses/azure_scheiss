@@ -35,12 +35,14 @@ print "</pre>";
 
 $server = 'localhost';
 $username = 'tobiasollmaier';
-$password = 'Will0fth3W1sps';
+$password = 'W1ll0fth3W1sps';
 $database = 'html_db';
+
+echo ('Vor Connection.');
 
 try{
     
-    $connection = new PDO('mysql:host=myjesussqlserver.mysql.database.azure.com;port=3306;dbname=html_db', $username, $password);
+    $connection = new PDO('mysql:host=myjesussqlserver.mysql.database.azure.com;dbname=html_db', $username, $password);
     //$connection = mysqli_init();
     //echo ('Init')
     //mysqli_ssl_set($connection,NULL,NULL, "https://webapptobias.azurewebsites.net/DigiCertGlobalRootCA.crt.pem", NULL, NULL); 
