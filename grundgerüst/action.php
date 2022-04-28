@@ -42,7 +42,7 @@ try{
     
     //$connection = new PDO('mysql:host=myjesussqlserver.mysql.database.azure.com;port=3306;dbname=html_db', 'tobiasollmaier', $password);
     $connection = mysqli_init(); 
-    mysqli_ssl_set($connection,NULL,NULL, "{localhost}", NULL, NULL); 
+    mysqli_ssl_set($connection,NULL,NULL, "localhost", NULL, NULL); 
     mysqli_real_connect($connection, "myjesussqlserver.mysql.database.azure.com", "tobiasollmaier", "W1ll0fth3W1sps", "html_db", 3306, MYSQLI_CLIENT_SSL);
     // EXCEPTION konfigurieren
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
