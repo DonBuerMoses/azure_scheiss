@@ -45,7 +45,7 @@ $database = 'html_db';
 try{
     $connection = new PDO('mysql:host=myjesussqlserver.mysql.database.azure.com;dbname=html_db', $username, $password);
     // EXCEPTION konfigurieren
-    
+
     $stmtuser = $connection->prepare ("SELECT * FROM user WHERE user.email = :email and user.passwort = :passwort");
     $stmtuser->bindParam(':email', $_POST["email"]);
     $stmtuser->bindParam(':passwort', $hashedPasswort);
@@ -54,13 +54,13 @@ try{
     session_destroy();
 
     if($result) {
-        echo ('<p>Passwort passt a bei da Datenbank</p>');
+        //echo ('<p>Passwort passt a bei da Datenbank</p>');
         session_start();
         $_SESSION["email"] = $_POST["email"];
         $_SESSION["passwort"] = $hashedPasswort;
         echo file_get_contents("index.html");
     } else {
-        echo ('<p>Passwort passt ned bei da Datenbank</p>');
+        //echo ('<p>Passwort passt ned bei da Datenbank</p>');
     }
     
     }
