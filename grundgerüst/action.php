@@ -48,7 +48,7 @@ try{
     //mysqli_real_connect($connection, "myjesussqlserver.mysql.database.azure.com", "tobiasollmaier", "W1ll0fth3W1sps", "html_db", 3306, MYSQLI_CLIENT_SSL);
     echo ('connect');
     // EXCEPTION konfigurieren
-    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $stmtplz = $connection->prepare ("INSERT INTO plz (plz, wohnort, bundesland)
         VALUES (:plz, :wohnort, :bundesland)");
