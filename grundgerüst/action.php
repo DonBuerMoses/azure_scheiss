@@ -38,7 +38,7 @@ $username = 'tobiasollmaier';
 $password = 'W1ll0fth3W1sps';
 $database = 'html_db';
 
-echo ('Vor Connection.');
+//echo ('Vor Connection.');
 
 try{
     
@@ -48,7 +48,7 @@ try{
     //mysqli_ssl_set($connection,NULL,NULL, "https://webapptobias.azurewebsites.net/DigiCertGlobalRootCA.crt.pem", NULL, NULL); 
     //echo ('SSL_Set')
     //mysqli_real_connect($connection, "myjesussqlserver.mysql.database.azure.com", "tobiasollmaier", "W1ll0fth3W1sps", "html_db", 3306, MYSQLI_CLIENT_SSL);
-    echo ('connect');
+    //echo ('connect');
     // EXCEPTION konfigurieren
     //$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -59,13 +59,13 @@ try{
     $stmtplz->bindParam(':wohnort', $_POST["wohnort"]);
     $stmtplz->bindParam(':bundesland', $_POST["bundesland"]);
     $stmtplz->execute();
-    echo ('<p>Eintrag PLZ erfolgreich</p>');
+    //echo ('<p>Eintrag PLZ erfolgreich</p>');
 
     $stmtadresse = $connection->prepare ("INSERT INTO adresse (strasse, plz_idplz)
     VALUES (:strasse, LAST_INSERT_ID())");
     $stmtadresse->bindParam(':strasse', $_POST["strasse"]);
     $stmtadresse->execute();
-    echo ('<p>Eintrag Adresse erfolgreich</p>');
+    //echo ('<p>Eintrag Adresse erfolgreich</p>');
 
     $stmtuser = $connection->prepare ("INSERT INTO user (name, anrede, email, geburtstag, passwort, tel_nr, file, adresse_idadresse)
     VALUES (:name, :anrede, :email, :geburtstag, :passwort, :tel_nr, :file, LAST_INSERT_ID())");
@@ -77,7 +77,7 @@ try{
     $stmtuser->bindParam(':tel_nr', $_POST["tel"]);
     $stmtuser->bindParam(':file', $_FILES['file']['name']);
     $stmtuser->execute();
-    echo ('<p>Eintrag User erfolgreich</p>');
+    //echo ('<p>Eintrag User erfolgreich</p>');
 
     }
     catch(PDOException $e)
