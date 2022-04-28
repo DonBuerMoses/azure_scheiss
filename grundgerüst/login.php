@@ -23,15 +23,15 @@ echo "<p>Array Länge $num2 </p>";
 
 foreach($dataArray as $value){
     if($value[2] == $_POST['email']){
-        echo "<p>Email passt.</p>";
+        //echo "<p>Email passt.</p>";
         if($value[3] == $hashedPasswort){
-            echo "<p>Passwort passt.</p>";
+            //echo "<p>Passwort passt.</p>";
             break;
         } else {
-            echo "<p>Passwort passt nicht.</p>";
+            //echo "<p>Passwort passt nicht.</p>";
         }    
     } else {
-        echo "<p>Email passt nicht.</p>";
+        //echo "<p>Email passt nicht.</p>";
     }
 }
 
