@@ -35,7 +35,7 @@ foreach($dataArray as $value){
     }
 }
 
-echo "<p>Jetzt de Datenbank: </p>";
+//echo "<p>Jetzt de Datenbank: </p>";
 
 $server = 'localhost';
 $username = 'tobiasollmaier';
