@@ -1,0 +1,116 @@
+/* custom styles */
+.form-header {
+    margin-top: 2rem;
+}
+
+.main-content {
+    flex-grow: 3;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(187, 187, 187);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 2rem;
+}
+
+.aside-content {
+    margin: 1rem;
+    flex-grow: 1;
+}
+
+.aside-text {
+    max-width: 10rem;
+    margin: 2rem;
+}
+
+.widget-product {
+    height: 15rem;
+    width: 10rem;
+    background-color: blanchedalmond;
+    margin: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    box-shadow: 2px 2px 2px 1px rgba(49, 49, 49, 0.2);
+}
+
+.widget-product--image:hover {
+    border: 0.1rem solid;
+    border-color: rgb(128, 128, 128);
+}
+
+.widget-product--image {
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.navbar {
+    background-color: rgb(206, 206, 206);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar-brand {
+    font-weight: 500;
+}
+
+.navbar-brand:hover {
+    font-weight: 600;
+    color: white !important;
+}
+
+.navbar-cross {
+    font-family: "SymbolCrucifix", Courier;
+    font-display: swap;
+    font-weight: 700;
+}
+
+.p-4 {
+    margin: 0 !important;
+    background-color: rgb(209, 209, 209) !important;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+  
+.form-signin .checkbox {
+    font-weight: 400;
+}
+  
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+  
+.form-signin input[type="email"] {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+  
+.form-signin input[type="password"] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* Sticky footer */
+html, body {
+    height: 100% !important;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    flex: 1 0 auto !important;
+    justify-content: center;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+}
+
+

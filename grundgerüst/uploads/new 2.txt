@@ -1,0 +1,10 @@
+public class DbEdit {
+    Connection connection = null;
+
+    try {
+        connection = DriverManager.getConnection();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        throw new SQLException("Verbindungsherstellung nicht möglich", e);
+    }
+}
