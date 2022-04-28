@@ -34,19 +34,19 @@ echo '<pre>';
 print "</pre>";
 
 $server = 'localhost';
-$username = 'pma';
+$username = 'tobiasollmaier';
 $password = 'Will0fth3W1sps';
 $database = 'html_db';
 
 try{
     
-    $connection = new PDO('mysql:host=myjesussqlserver.mysql.database.azure.com;port=3306;dbname=html_db', 'tobiasollmaier', $password);
+    $connection = new PDO('mysql:host=myjesussqlserver.mysql.database.azure.com;port=3306;dbname=html_db', $username, $password);
     //$connection = mysqli_init();
     //echo ('Init')
     //mysqli_ssl_set($connection,NULL,NULL, "https://webapptobias.azurewebsites.net/DigiCertGlobalRootCA.crt.pem", NULL, NULL); 
     //echo ('SSL_Set')
     //mysqli_real_connect($connection, "myjesussqlserver.mysql.database.azure.com", "tobiasollmaier", "W1ll0fth3W1sps", "html_db", 3306, MYSQLI_CLIENT_SSL);
-    echo ('connect')
+    echo ('connect');
     // EXCEPTION konfigurieren
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
