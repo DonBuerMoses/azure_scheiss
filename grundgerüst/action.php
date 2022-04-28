@@ -47,6 +47,9 @@ try{
     echo ('SSL_Set');
     mysqli_real_connect($connection, "myjesussqlserver.mysql.database.azure.com", "tobiasollmaier", "W1ll0fth3W1sps", "html_db", 3306, MYSQLI_CLIENT_SSL);
     echo ('connect');
+    if (mysqli_connect_errno($connection)) {
+        die('Failed to connect to MySQL: '.mysqli_connect_error());
+    }
     // EXCEPTION konfigurieren
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -78,7 +81,7 @@ try{
     echo ('<p>Eintrag User erfolgreich</p>');
 
     }
-    catch(PDOException $e)
+    catch(mysql.connector.Error $e)
      {
      echo ( 'Fehler: ' . $e->getMessage());
      }
